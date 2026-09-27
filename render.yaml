@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: agentic-ai-assistant
+    runtime: python
+    autoDeploy: true
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run apps.py --server.port $PORT --server.address 0.0.0.0 --server.headless true
+    healthCheckPath: /_stcore/health
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: TAVILY_API_KEY
+        sync: false
+      - key: WEATHERSTACK_API_KEY
+        sync: false
