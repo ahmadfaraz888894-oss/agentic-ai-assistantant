@@ -1,0 +1,29 @@
+# Secrets
+.env
+.env.*
+*.env
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Nested clone
+agentic-ai-assistantant/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# IDE / OS
+.vscode/
+.idea/
+*.swp
+Thumbs.db
+desktop.ini
+
+# Logs / temp
+*.log
+*.tmp

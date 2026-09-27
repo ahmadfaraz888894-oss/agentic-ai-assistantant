@@ -1,0 +1,9 @@
+streamlit>=1.40,<2
+langchain>=1,<2
+langchain-openai>=1,<2
+langchain-ollama>=1,<2
+langchain-groq>=1,<2
+langchain-google-genai>=4,<5
+python-dotenv>=1,<2
+httpx[socks]>=0.28,<1
+requests>=2.31,<3
