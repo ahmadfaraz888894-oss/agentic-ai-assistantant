@@ -26,6 +26,11 @@ PROMPT = (
 def load_defaults():
     """Read project .env without exporting keys into shared process environment."""
     values = {**dotenv_values(Path(__file__).resolve().parent / ".env"), **os.environ}
+    try:
+        import streamlit as st
+        values.update({k: str(v) for k, v in dict(st.secrets).items()})
+    except Exception:
+        pass
     if not values.get("GEMINI_API_KEY"):
         values["GEMINI_API_KEY"] = values.get("GOOGLE_API_KEY", "")
     return values
